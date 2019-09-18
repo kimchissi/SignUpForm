@@ -12,4 +12,5 @@ public class FormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     // add something
+    // another something
 }
