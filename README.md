@@ -1,5 +1,4 @@
 # SignUpForm
 
 This is an App which I made for my Intro to Mobile App Development class.
-It is supposed to check to see if a User put in their name, email and matching passwords.
-However, it currently doesn't work quite right. 
+It allows the user to type in a name, e-mail, and matching passwords, and instructs them to keep trying until there is an input for all 4 items and the passwords match.
