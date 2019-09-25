@@ -17,14 +17,15 @@ public class FormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button buttonSave;
-        TextView theName = findViewById(R.id.EditTextName);
-        TextView theEmail = findViewById(R.id.EditEmail);
-        TextView thePassword1 = findViewById(R.id.EditPassword1);
-        TextView thePassword2 = findViewById(R.id.EditPassword2);
-        final String Name = theName.getText().toString();
-        final String Email = theEmail.getText().toString();
-        final String Password1 = thePassword1.getText().toString();
-        final String Password2 = thePassword2.getText().toString();
+        final TextView theName = findViewById(R.id.EditTextName);
+        final TextView theEmail = findViewById(R.id.EditEmail);
+        final TextView thePassword1 = findViewById(R.id.EditPassword1);
+        final TextView thePassword2 = findViewById(R.id.EditPassword2);
+        // apparently you can't put the text into a variable like this
+        //final String Name = theName.getText().toString();
+        //final String Email = theEmail.getText().toString();
+        //final String Password1 = thePassword1.getText().toString();
+        //final String Password2 = thePassword2.getText().toString();
 
         buttonSave = findViewById(R.id.ButtonSave);
 
@@ -32,14 +33,15 @@ public class FormActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                if (isNotEmpty(Name) == false) {
+                //Toast.makeText(FormActivity.this, "hello, " + theName.getText().toString(), Toast.LENGTH_LONG).show();
+                if (isNotEmpty(theName.getText().toString()) == false) {
                     Toast.makeText(FormActivity.this, "Please provide a name", Toast.LENGTH_LONG).show();
-                } else if (isNotEmpty(Email) == false) {
+                } else if (isNotEmpty(theEmail.getText().toString()) == false) {
                     Toast.makeText(FormActivity.this, "Please provide an email", Toast.LENGTH_LONG).show();
-                } else if (isNotEmpty(Password1) == false || passwordMatches(Password1, Password2) == false) {
+                } else if (isNotEmpty(thePassword1.getText().toString()) == false || passwordMatches(thePassword1.getText().toString(), thePassword2.getText().toString()) == false) {
                     Toast.makeText(FormActivity.this, "Passwords do not match", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(FormActivity.this, "Welcome, " + Name, Toast.LENGTH_LONG).show();
+                    Toast.makeText(FormActivity.this, "Welcome, " + theName.getText().toString(), Toast.LENGTH_LONG).show();
                 }
 
             }
